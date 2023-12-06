@@ -12,17 +12,17 @@
       <div class="header_container">
         <header class="header_row">
           <div class="header_left">
-            <h2 class="header_left_logo">
+            <a href="https://www.fender.com/en-US/start" class="header_left_logo">
               <img src="./img/fender_logo.png" alt="펜더 로고" />
-            </h2>
+            </a>
           </div>
           <div class="header_center">
             <ul class="header_center_menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Product</a></li>
-              <li><a href="#">Recommend</a></li>
-              <li><a href="#">Q&A</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="https://www.fender.com/en-US/start">Home</a></li>
+              <li><a href="https://www.fender.com/play">Play</a></li>
+              <li><a href="https://www.fender.com/online-guitar-tuner">Tune</a></li>
+              <li><a href="https://www.fender.com/en-US/beginner-guitar-hub.html/">Beginners</a></li>
+              <li><a href="https://www.fender.com/en-US/contact-us">Contact</a></li>
               <li>
                 <a href="#"
                   ><img src="./img/icon_search.png" alt="검색하기 아이콘"
@@ -33,18 +33,18 @@
           <div class="header_right">
             <ul class="header_right_menu">
               <li>
-                <a href="#"
+                <a href="https://connect.fender.com/sign-in?ref=https://www.fender.com/en-US/dealers?signin=1701853368960&_gl=1*1gpjrpd*_ga*NTAwNTg3Mzk5LjE3MDE4NTMxNjI.*_ga_LM1PVBW4K2*MTcwMTg1MzE2Mi4xLjEuMTcwMTg1MzM3MC41OC4wLjA."
                   ><img src="./img/icon_mypage.png" alt="마이페이지 아이콘"
                 /></a>
               </li>
               <li>
-                <a href="#"
-                  ><img src="./img/icon_location.png" alt="마이페이지 아이콘"
+                <a href="https://www.fender.com/en-US/dealers"
+                  ><img src="./img/icon_location.png" alt="지도 아이콘"
                 /></a>
               </li>
               <li>
-                <a href="#"
-                  ><img src="./img/icon_cart.png" alt="마이페이지 아이콘"
+                <a href="https://www.fender.com/en-US/cart"
+                  ><img src="./img/icon_cart.png" alt="장바구니 아이콘"
                 /></a>
               </li>
             </ul>
@@ -56,11 +56,8 @@
           <h1>Fender Days</h1>
           <h4>Enjoy Exclusive offers, Limited time only.</h4>
           <div class="btn_box">
-            <button class="btn_shop"><a href="#">Shop now</a></button>
-            <button class="btn_icon">
-              <img src="./img/icon_stop.png" alt="멈춤 아이콘" />
-            </button>
-            <button class="btn_icon">
+            <button class="btn_shop"><a href="https://www.fender.com/en-US">Shop now</a></button>
+            <button id="muteButton" class="btn_icon">
               <img src="./img/icon_sound.png" alt="사운드 아이콘" />
             </button>
           </div>
@@ -81,7 +78,28 @@
         </div>
         </div>
       </div>
-      <video src="./img/Telecaster.mp4" muted autoplay loop></video>
+      <video  id="myVideo" src="./img/Telecaster.mp4" muted autoplay loop></video>
     </section>
+
+    <script>
+        // 비디오 요소 가져오기
+        var video = document.getElementById('myVideo');
+
+        // 음소거 상태 변경 함수
+        function toggleMute() {
+          if (video.muted) {
+            // 음소거 상태 해제
+            video.muted = false;
+          } else {
+            // 음소거 상태로 변경
+            video.muted = true;
+          }
+        }
+        // 음소거 버튼 클릭 시 음소거 상태 변경 실행
+        var muteButton = document.getElementById('muteButton');
+        muteButton.addEventListener('click', toggleMute);
+
+
+    </script>
   </body>
 </html>
